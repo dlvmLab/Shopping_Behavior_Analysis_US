@@ -1,5 +1,6 @@
 ```markdown
-# 📊 Análisis de Comportamiento de Compra en EE.UU.
+# 📊 Análisis de Comportamiento de Compra en EE.UU. _ esto es provisional
+
 
 ## 📖 Descripción
 **Análisis Exploratorio de Datos (EDA)** sobre el comportamiento de compras en Estados Unidos, basado en transacciones con categoría, monto, fecha, canal y demografía (edad y género).
