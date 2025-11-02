@@ -1,127 +1,112 @@
 ```markdown
-# 📊 Análisis de Comportamiento de Compra en EE.UU. _ esto es provisional- y este también- probando-
-
-
-## 📖 Descripción
-**Análisis Exploratorio de Datos (EDA)** sobre el comportamiento de compras en Estados Unidos, basado en transacciones con categoría, monto, fecha, canal y demografía (edad y género).
-
-- **Limpieza**: eliminación de duplicados, manejo de valores faltantes, estandarización de formatos.
-- **Transformación**: extracción de componentes de fecha, creación de variables derivadas (ej. ticket promedio).
-- **Análisis descriptivo**: estadísticas por categoría/canal, tendencias temporales, relaciones entre variables.
-- **Visualizaciones**: tablas dinámicas, top 5 y bottom 5 con mapas, gráficos de dona para accesorios, dashboard interactivo con movimiento estacional de compras e ingresos.
-- **Informe**: resumen de patrones y hallazgos clave.
-
-> **Objetivo**: Determinar la influencia de la demografía (jóvenes, adultos, adultos mayores; hombres y mujeres) en la estacionalidad de compras, método de pago preferido, envío a domicilio, demanda por estado (alta/baja), y distribución de productos (equitativa en prendas; menor en calzado y ropa exterior).
-
+# 📊 Análisis de Comportamiento de Compra en EE.UU.
+**Dashboard interactivo 100% en Excel con VBA**
+> **Hallazgo clave**: La gráfica comparativa **Compras vs Ingresos** refleja cómo responden **volumen de ventas** y **rentabilidad** a cada filtro — ideal para identificar segmentos de alto valor.
 ---
-
-## 🗂 Estructura del Proyecto
+## 📖 Descripción del Proyecto
+Análisis Exploratorio de Datos (EDA) sobre transacciones de compras en Estados Unidos.
+**Variables clave**:
+- Categorías de prendas
+- Estación del año
+- Demografía (edad, género, ubicación)
+- Estado de suscripción
+- Uso de código promocional
+- Descuento aplicado
+- Tipo de envío preferido
+- Método de pago preferido
+**Proceso realizado**:
+- **Limpieza**: eliminación de duplicados, tratamiento de nulos, corrección de formatos
+- **Transformación**: no fue necesario modificar la estructura de los datos
+- **Visualizaciones**: tablas dinámicas + gráficos interactivos → **dashboard**
+- **Informe**: PDF con insights accionables y recomendaciones.
+---
+## 🗂 Estructura del Repositorio
 ```
 ├── data/
-│   ├── raw/
-│   │   └── shopping_behaviour.csv              # Datos crudos originales
-│   └── processed/
-│       └── Shopping_Analysis.xlsx              # Libro Excel con macros VBA:
-│                                           # • shopping_behavior_updated (datos limpios, transformados y con verificación de outliers)
-│                                           # • Verifications (verificación exclusiva de duplicados y valores nulos)
-│                                           # • Outliers (análisis dedicado a detección y tratamiento de valores atípicos)
-│                                           # • Exploratory_Analysis (verificación de suposiciones mediante tablas dinámicas y gráficos)
-│                                           # • Dashboard (informe interactivo final con filtros y conclusiones clave)
+│   ├── raw/shopping_behaviour.csv
+│   └── processed/Shopping_Behavior_Analysis_US ← Archivo principal con VBA
+│       ├── shopping_behavior_updated → datos limpios + outliers tratados
+│       ├── Verifications → validación de duplicados y nulos
+│       ├── Outliers → detección y manejo de valores atípicos
+│       ├── Exploratory_Analysis → tablas y gráficos exploratorios
+│       └── Dashboard → **interfaz interactiva con 5 filtros exclusivos**
 ├── results/
-│   ├── figuras/                                # Gráficos exportados
-│   └── shopping_report.pdf                     # Informe final en PDF (en inglés)
+│   └── shopping_report.pdf → informe final en PDF
 └── README.md
 ```
-
-> **Nota**: Todo el procesamiento, análisis y visualización se realiza **100% en Excel con macros VBA**.  
-> **Idioma del proyecto**: Los datos fueron obtenidos originalmente en **inglés**, por lo que se mantiene fielmente el idioma en nombres de pestañas, etiquetas y código para preservar la esencia y consistencia del dataset. Esta es la versión en **español** del README — también existe una versión en **inglés** en el repositorio.
-
+> **Idioma del dataset**: Inglés (original)
+> **Idioma del Excel**: Inglés (nombres de pestañas y variables)
+> **Idioma del README**: Español
 ---
-
-## 🛠 Instalación y Requisitos
-**No requiere instalación de software adicional.**
-
-| Herramienta         | Versión recomendada          | Uso |
-|---------------------|------------------------------|-----|
-| **Microsoft Excel** | 2016 o superior (macros habilitadas) | Limpieza, transformación, análisis, tablas dinámicas, dashboard interactivo |
-| **Lector de CSV**   | Cualquier (Excel, Bloc de notas) | Visualización de datos crudos |
-
-### Pasos para ejecutar:
-1. **Clonar repositorio**
+## 🛠 Requisitos y Ejecución
+| Herramienta | Requisito |
+|-------------------|----------------------------------------|
+| **Excel** | Versión 2016 o superior + **macros habilitadas** |
+| **Visor CSV** | Cualquier (para ver datos crudos) |
+### Pasos para usar el dashboard:
+1. Clonar el repositorio
    ```bash
    git clone [URL_DEL_REPOSITORIO]
-   cd nombre_del_proyecto
+   cd nombre-del-proyecto
    ```
-2. **Abrir** `data/processed/Shopping_Analysis.xlsx`
-3. **Habilitar macros** → "Habilitar contenido"
-4. **Explorar pestañas**:
-   - `shopping_behavior_updated`: Datos limpios, transformados y verificados (incluye detección de outliers).
-   - `Verifications`: Verificación exclusiva de **duplicados** y **valores nulos**.
-   - `Outliers`: Análisis específico de valores atípicos (detección, impacto y decisiones).
-   - `Exploratory_Analysis`: Verificación de suposiciones mediante tablas dinámicas y gráficos cuando es necesario.
-   - `Dashboard`: Informe interactivo final con filtros, conclusiones clave y visualizaciones dinámicas.
-5. **Generar informe** → Exportar a PDF desde la pestaña `Dashboard` (ver instrucciones abajo).
-
+2. Abrir el archivo:
+   `data/processed/Shopping_Behavior_Analysis_US`
+3. **Habilitar macros** al abrir (esencial para el funcionamiento)
+4. Ir a la pestaña **`Dashboard`**
+5. **Aplicar los 5 filtros dinámicos**:
+   - Estado de suscripción (Sí/No)
+   - Uso de código promocional (Sí/No)
+   - Descuento aplicado (Sí/No)
+   - Grupo etario (Jóvenes / Adultos / Adultos mayores)
+   - Género (Hombre / Mujer)
 ---
-
-## 📄 Informe Final (PDF)
-- **Archivo**: `results/shopping_report.pdf` *(nombre en inglés para mantener consistencia con el dataset original)*
-- **Contenido**: Resumen ejecutivo, hallazgos clave, gráficos destacados y recomendaciones.
-
-### 📑 Instrucciones de Impresión Recomendadas:
-1. Abrir el PDF en **Adobe Acrobat Reader** (o similar).
-2. Ir a **Archivo > Imprimir**.
-3. Configuración sugerida:
-   - **Tamaño**: A4
-   - **Orientación**: **Horizontal** (para mejor visualización de dashboards y gráficos)
-   - **Escala**: "Ajustar a página" o **100%** según prefieras mantener proporciones exactas
-   - **Color**: **A color** (imprescindible para gráficos)
-   - **Imprimir por ambas caras**: Opcional
-4. **Revisar vista previa** antes de imprimir para evitar cortes en elementos visuales.
-
+## 📊 Dashboard Interactivo (`Dashboard`)
+- **Gráfica estrella**: **Compras vs Ingresos**
+  → Actualización al filtrar. Permite ver cómo varían **volumen** y **ganancia** por segmento.
+- **5 Filtros exclusivos y dinámicos**:
+1. **Suscripción**
+2. **Código promocional usado**
+3. **Descuento aplicado**
+4. **Edad** (Jóvenes: 18-35 | Adultos: 36-55 | Mayores: 56+)
+5. **Género**
+- **Análisis interactivo inmediato**:
+- Efecto de promociones en volumen vs margen
+- Diferencias entre suscriptores y no suscriptores
+- Rentabilidad por demografía y estación
+- Segmentos de mayor valor comercial
 ---
-
-## 📊 Resultados y Conclusiones
-- **Demografía y decisiones**:
-  - Análisis por bloques etarios (jóvenes, adultos, adultos mayores) y género.
-  - Influencia clara en estacionalidad, método de pago y preferencia de envío.
-
-- **Distribución geográfica**:
-  - Tablas top 5 / bottom 5 con mapas gráficos.
-  - Identificación de estados con mayor y menor demanda.
-
-- **Productos**:
-  - Demanda equitativa entre prendas.
-  - Accesorios (gráfico de dona): **calzado** y **ropa exterior** con menor demanda.
-
-- **Tendencias temporales**:
-  - Dashboard muestra **picos de mayor venta** claramente correlacionados con el **revenue generado**.
-  - Se observan **máximos estacionales en invierno y primavera**, con mayor volumen de transacciones e ingresos en estas estaciones.
-
+## 📄 Informe Final
+- **Archivo**: `results/shopping_report.pdf`
+- **Formato de impresión recomendado**:
+  A4 | **Horizontal** | **A color** | Escala 100% o ajustar a página
 ---
-
-## 🔄 Próximos Pasos
-- Incorporar datos externos (clima, eventos) para enriquecer análisis estacional.
-- Segmentación más fina por canal de compra y frecuencia.
-- Automatización de exportación del dashboard a PowerPoint/PDF.
-
+## 🔍 Conclusiones Clave
+- **Mujeres**: compran más en **otoño** y **primavera**
+- **Hombres**: lideran en **primavera** e **invierno**
+- **Invierno**: alta actividad general, **excepto en mayores de 56 años** (¿relacionado con clima?)
+- **Promociones y descuentos**: más usados por **no suscriptores** → posible vía de captación
+- **Categorías menos vendidas**: **ropa de exterior (outerwear)** y **calzado**, a pesar de que los estados líderes (Wisconsin, Arizona, Rhode Island, Delaware, Ohio) tienen climas variados
+- **Categorías top**: **accesorios** y **ropa general**
+- **Primavera** → mayor volumen de compras
+- **Otoño** → mayor **ingreso neto** (mayor ticket promedio)
 ---
-
+## 🚀 Mejoras Pendientes y Futuras
+| Estado | Mejora |
+|--------------|------------------------------------------------------------------------|
+| ⏳ **Pendiente** | **Traducir este README al inglés** (idioma original del dataset) |
+| ✅ Completado | Dashboard interactivo con VBA |
+| ✅ Completado | Informe PDF con insights accionables |
+| 🔄 Futura | Añadir segmentación por estado |
+---
 ## 🤝 Contribuciones
-Bienvenidas. Abre un *issue* o *pull request* para mejoras.
-
+¡Toda mejora es bienvenida!
+- Abre un **issue** para reportar errores o sugerir ideas
+- Envía un **Pull Request** con mejoras (ej: traducción, nuevas visualizaciones, optimización de código VBA)
 ---
-
 ## ✒ Autora
-**Dayana Valdés**  
-📧 [dlvm.focus@gmail.com](mailto:dlvm.focus@gmail.com)  
+**Dayana Valdés**
+📧 [dlvm.focus@gmail.com](mailto:dlvm.focus@gmail.com)
 🔗 [linkedin.com/in/dayanavm](https://linkedin.com/in/dayanavm) | [github.com/dlvmLab](https://github.com/dlvmLab)
-
-- Análisis realizado con Excel VBA y visualizaciones interactivas.
-- Contribuciones técnicas: **macros VBA**, **dashboard interactivo** y **procesamiento automatizado de datos**.
-
----
-
-> **Proyecto desarrollado como parte del Máster en Data & Analytics V3 de The PowerMBA**  
-> *Última actualización: 30 de octubre de 2025*
+> **Proyecto como parte del módulo DASHBOARD & ANÁLISIS DE DATOS – Máster en Data & Analytics V3 – The PowerMBA**
+*Actualizado: 2 de noviembre de 2025*
 ```
