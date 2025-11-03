@@ -107,6 +107,6 @@ Análisis Exploratorio de Datos (EDA) sobre transacciones de compras en Estados 
 **Dayana Valdés**
 📧 [dvm.focus@gmail.com](mailto:dvm.focus@gmail.com)
 🔗 [linkedin.com/in/dayanavm](https://linkedin.com/in/dayanavm) | [github.com/dlvmLab](https://github.com/dlvmLab)
-> **Proyecto como parte del módulo DASHBOARD & ANÁLISIS DE DATOS – Máster en Data & Analytics V3 – The PowerMBA**
+> **Proyecto realizado como parte del módulo DASHBOARD & ANÁLISIS DE DATOS – Máster en Data & Analytics V3 – The PowerMBA**
 *Actualizado: 03 de noviembre de 2025*
 ```
