@@ -78,7 +78,7 @@ Análisis Exploratorio de Datos (EDA) sobre transacciones de compras en Estados 
 ## 📄 Informe Final
 - **Archivo**: `results/shopping_report.pdf`
 - **Formato de impresión recomendado**:
-  A4 | **Horizontal** | **A color** | Escala 100% o ajustar a página
+  A4 | **Vertical** | **A color** | Escala 100% o ajustar a página
 ---
 ## 🔍 Conclusiones Clave
 - **Mujeres**: compran más en **otoño** y **primavera**
