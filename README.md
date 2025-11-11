@@ -60,7 +60,7 @@ Análisis Exploratorio de Datos (EDA) sobre transacciones de compras en Estados 
    - Grupo etario (Jóvenes / Adultos / Adultos mayores)
    - Género (Hombre / Mujer)
 ---
-## 📊 Dashboard Interactivo (`Dashboard`)
+## 📊 Dashboard Interactivo
 - **Gráfica estrella**: **Compras vs Ingresos**
   → Actualización al filtrar. Permite ver cómo varían **volumen** y **ganancia** por segmento.
 - **5 Filtros exclusivos y dinámicos**:
